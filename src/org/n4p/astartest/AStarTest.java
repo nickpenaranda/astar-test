@@ -52,7 +52,9 @@ public class AStarTest extends BasicGame {
 	static final int gSize = 60;
 
 	static final int size = Math.min(winX, winY) / gSize;
-
+	
+	int x_off = (winX - (gSize * size)) / 2;
+	
 	int grid[][] = new int[gSize][gSize];
 
 	static int sx, sy, ex, ey; // Start x,y; End x,y
@@ -203,34 +205,34 @@ public class AStarTest extends BasicGame {
 				int t = grid[x][y];
 				g.setColor(colors[t]);
 				if (t > 0)
-					g.fillRect(x * size + 1, y * size + 1, size - 1, size - 1);
+					g.fillRect(x_off + x * size + 1, y * size + 1, size - 1, size - 1);
 			}
 		}
 		g.setColor(colors[START]);
-		g.fillRect(sx * size + 1, sy * size + 1, size - 1, size - 1);
+		g.fillRect(x_off + sx * size + 1, sy * size + 1, size - 1, size - 1);
 
 		for (Node n : path) {
 			g.setColor(colors[PATH]);
-			g.fillOval(n.x * size + 2, n.y * size + 2, size - 3, size - 3);
+			g.fillOval(x_off + n.x * size + 2, n.y * size + 2, size - 3, size - 3);
 		}
 
 		if (pathFound) {
 			g.setColor(Color.green);
-			g.drawString(String.format("w = %f, %d iterations", Node.w, attempts), 10,
+			g.drawString(String.format("w = %.1f, %d iterations", Node.w, attempts), 10,
 					winY - 20);
 		}
 		else {
 			g.setColor(Color.red);
-			g.drawString(String.format("**NO PATH** w = %f, %d iterations", Node.w, attempts), 10,
+			g.drawString(String.format("**NO PATH** w = %.1f, %d iterations", Node.w, attempts), 10,
 					winY - 20);
 		}
 	}
 
 	@Override
 	public void mousePressed(int button, int x, int y) {
-		int gx = x / size;
+		int gx = (x - x_off) / size;
 		int gy = y / size;
-		if (gx > gSize || gy > gSize)
+		if (gx >= gSize || gx < 0 || gy >= gSize || gy < 0)
 			return;
 		switch (button) {
 		case 0:
