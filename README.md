@@ -1,7 +1,7 @@
 A* Test
 =======
 
-![screenshot](screenshot.jpg)
+![screenshot](http://github.com/nickpenaranda/astar-test/raw/master/screenshot.jpg)
 
 This is a barebones test/demonstration of the A* pathfinding algorithm, as described by Patrick Lester [here](http://www.polyalmanac.org/games/aStarTutorial.html).
 
