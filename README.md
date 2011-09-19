@@ -12,3 +12,11 @@ Written in Java using Slick/LWJGL:
 
 Copyright (c) 2011 Nick Penaranda.
 Distributed under the MIT License.
+
+Instructions
+------------
+
+* Press *SPACEBAR* to generate a new map and randomize start/end locations
+* *Left click* to place a wall and *right click* to remove a wall.  Adding and removing walls will automatically recalculate the path.
+
+* Gray blocks are locations that the algorithm attempted, providing a rough indication of the amount of difficulty it had trying to produce the path.
