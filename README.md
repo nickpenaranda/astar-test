@@ -26,7 +26,7 @@ Instructions
 Changelog
 ---------
 * 19 Sep 2011
-** Added weight scaling via mousewheel
-** Display path info
-** (FIXED) Crash when mouseclick outside of grid
+ * Added weight scaling via mousewheel
+ * Display path info
+ * (FIXED) Crash when mouseclick outside of grid
 
