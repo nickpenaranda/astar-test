@@ -1,6 +1,8 @@
 A* Test
 =======
 
+![screenshot](screenshot.jpg)
+
 This is a barebones test/demonstration of the A* pathfinding algorithm, as described by Patrick Lester [here](http://www.polyalmanac.org/games/aStarTutorial.html).
 
 Written in Java using Slick/LWJGL:
